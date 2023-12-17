@@ -28,7 +28,7 @@ import (
 // HostInfo is a wrapper struct containing information about the host system's
 // memory, block storage, CPU, etc
 type HostInfo struct {
-	ctx       *context.Context
+	ctx        context.Context
 	Memory    *memory.Info    `json:"memory"`
 	Block     *block.Info     `json:"block"`
 	CPU       *cpu.Info       `json:"cpu"`
@@ -137,3 +137,4 @@ func (i *HostInfo) YAMLString() string {
 func (i *HostInfo) JSONString(indent bool) string {
 	return marshal.SafeJSON(i.ctx, i, indent)
 }
+ 
